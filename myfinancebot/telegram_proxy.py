@@ -41,6 +41,7 @@ async def one_c_to_tg(request: Request):
     logger.info(f"Body: {body}")
 
     URL = body.get("URL")
+    URL = URL.replace("\n", "").replace("\r", "")
     content = body.get("сontent")
     
     if not content:
